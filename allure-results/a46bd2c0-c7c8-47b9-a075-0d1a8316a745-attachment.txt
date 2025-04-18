@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": ".c-UUKrH.c-UUKrH-kDyeyw-type-error"
+}
