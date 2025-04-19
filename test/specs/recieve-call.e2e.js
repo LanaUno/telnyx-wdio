@@ -3,7 +3,7 @@ import mainPage from "../pageobjects/main.page";
 describe("Testing recieve a call form", () => {
     beforeEach(async () => {
         await mainPage.navigate();
-        await browser.setWindowSize(1920, 1080);
+        await browser.setWindowSize(1440, 900);
         await mainPage.bellCompanyName.scrollIntoView();
     });
 
@@ -20,10 +20,11 @@ describe("Testing recieve a call form", () => {
         await mainPage.checkTermsAndCondBox();
         await mainPage.buildMyVoiceBotBtn.isDisplayed();
         await mainPage.clickBuildMyVoiceBotBtn();
-        await expect(mainPage.domainErrMessage).toHaveText(expect.stringContaining('valid Domain'))
-        await mainPage.domainErrMessage.getCSSProperty('color: #e2231a')
-        await mainPage.domainName.getCSSProperty('border-color: #e2231a')
-        // await mainPage.domainName.getCSSProperty(expect.('background-color: #e2231a') )
+        await expect(mainPage.domainErrMessage).toHaveText(
+            expect.stringContaining("valid Domain")
+        );
+        await mainPage.domainErrMessage.getCSSProperty("color: #e2231a");
+        await mainPage.domainName.getCSSProperty("border-color: #e2231a");
     });
 
     it("Fill the form with no checked Captcha", async () => {
@@ -39,6 +40,8 @@ describe("Testing recieve a call form", () => {
         await mainPage.checkTermsAndCondBox();
         await mainPage.buildMyVoiceBotBtn.isDisplayed();
         await mainPage.clickBuildMyVoiceBotBtn();
-        await expect(mainPage.sorryErrMsg).toHaveText(expect.stringContaining('Sorry'))
+        await expect(mainPage.sorryErrMsg).toHaveText(
+            expect.stringContaining("Sorry")
+        );
     });
 });

@@ -1,10 +1,7 @@
 class ThanksPage {
-    get thanksMessage () {return $(".c-fGbiyG > .c-PJLV")};
-  
-    // validateThanksMessageExist() {
-    //   this.getThanksMessage().contains(/Thank/i);
-    //   return this;
-    // }
-  }
+    get thanksMessage() {
+        return $(".c-fGbiyG > .c-PJLV");
+    }
+}
 
 export default new ThanksPage();

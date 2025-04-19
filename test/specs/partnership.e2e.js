@@ -1,7 +1,6 @@
 import mainPage from "../pageobjects/main.page";
 import partnerPage from "../pageobjects/partner.page";
-import FormPage from "../test/pageobjects/form.page";
-
+import thanksPage from "../pageobjects/thanks.page";
 
 describe("Testing Become a parnter form", () => {
     beforeEach(async () => {
@@ -48,15 +47,35 @@ describe("Testing Become a parnter form", () => {
         await partnerPage.countryExt.isDisplayed();
         await partnerPage.selectCountry();
         await partnerPage.phoneNumberField.isDisplayed();
-        await super.typePhoneNumber()
-        // await partnerPage.typePhoneNumber();
+        await partnerPage.typePhoneNumber();
         await partnerPage.selectOptionSaasIsvTech();
         await partnerPage.addInfoRequestField.isDisplayed();
         await partnerPage.typeAddInfoRequest();
         await partnerPage.clickSubmitButton();
-        // await expect(partnerPage.invalidPnoneMsg).toHaveText(
-        //     expect.stringContaining("15 digits")
-        // );
-        // await partnerPage.invalidPnoneMsg.getCSSProperty("color: #e2231a");
+        await expect(browser).toHaveUrl(expect.stringContaining("/thank-you"));
+        await expect(thanksPage.thanksMessage).toHaveText(
+            expect.stringContaining("Thank you.")
+        );
+    });
+    it("Wrong email format in Become a Partner Form", async () => {
+        await partnerPage.firstNameField.isDisplayed();
+        await partnerPage.typeFirstName();
+        await partnerPage.lastNameField.isDisplayed();
+        await partnerPage.typeLastName();
+        await partnerPage.companyName.isDisplayed();
+        await partnerPage.typeCompanyName();
+        await partnerPage.businessEmailField.isDisplayed();
+        await partnerPage.typeWrongEmailFormat();
+        await partnerPage.countryExt.isDisplayed();
+        await partnerPage.selectCountry();
+        await partnerPage.phoneNumberField.isDisplayed();
+        await partnerPage.typePhoneNumber();
+        await partnerPage.selectOptionSaasIsvTech();
+        await partnerPage.addInfoRequestField.isDisplayed();
+        await partnerPage.typeAddInfoRequest();
+        await partnerPage.clickSubmitButton();
+        await expect(partnerPage.invalidEmailMsg).toHaveText(
+            expect.stringContaining("valid email")
+        );
     });
 });

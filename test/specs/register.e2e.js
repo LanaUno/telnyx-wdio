@@ -5,7 +5,7 @@ describe('Testing register form', () => {
     beforeEach(async () => {
         await mainPage.navigate()
         await mainPage.clickSignUpLink();
-        // await expect(browser).toHaveUrl(expect.stringContaining('/sign-up')) 
+        await expect(browser).toHaveUrl(expect.stringContaining('/sign-up')) 
     })
   it('Register an account with password less then 12 characters long', async () =>{
     await signUpPage.emailField.isDisplayed();
