@@ -1,4 +1,4 @@
-name: CI
+name: wdio
 on: push
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
         - name: 🐢 Setup Node
           uses: actions/setup-node@v4
           with:
-            node-version-file: '.nvmrc'
+            node-version-file: 20
 
         - name: 🏗️ Install Dependencies
           run: npm install
