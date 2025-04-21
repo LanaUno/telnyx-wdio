@@ -4,6 +4,8 @@ import signUpPage from "../pageobjects/sign-up.page"
 describe('Testing register form', () => {
     beforeEach(async () => {
         await mainPage.navigate()
+        await browser.setWindowSize(1440, 900);
+        await mainPage.signUpLink.waitForEnabled({reverse: false});
         await mainPage.clickSignUpLink();
         await expect(browser).toHaveUrl(expect.stringContaining('/sign-up')) 
     })
@@ -16,7 +18,7 @@ describe('Testing register form', () => {
     await signUpPage.typeLastName();
     await signUpPage.passwordField.isDisplayed();
     await signUpPage.typeShortPassword();
-    await signUpPage.tersmConditionsBox.isDisplayed();
+    await signUpPage.tersmConditionsBox.waitForClickable();
     await signUpPage.checkTermsConditionsBox();
     await signUpPage.signUpBtn.isDisplayed();
     await signUpPage.clickSingUpBtn();
@@ -31,6 +33,7 @@ describe('Testing register form', () => {
     await signUpPage.passwordField.isDisplayed()
     await signUpPage.typePassword();
     await signUpPage.tersmConditionsBox.isDisplayed()
+    await signUpPage.tersmConditionsBox.waitForClickable();
     await signUpPage.checkTermsConditionsBox();
     await signUpPage.signUpBtn.isDisplayed()
     await signUpPage.clickSingUpBtn();

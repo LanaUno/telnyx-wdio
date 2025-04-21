@@ -18,6 +18,7 @@ describe.only("Testing Contact Us form", () => {
         await contactUsPage.businessEmailField.isDisplayed();
         await contactUsPage.typeBusinessEmail();
         await contactUsPage.countryExt.isDisplayed();
+        await contactUsPage.countryExt.waitForClickable();
         await contactUsPage.selectCountry();
         await contactUsPage.phoneNumberField.isDisplayed();
         await contactUsPage.typePhoneNumber();
@@ -43,6 +44,7 @@ describe.only("Testing Contact Us form", () => {
         await contactUsPage.businessEmailField.isDisplayed();
         await contactUsPage.typeInvalidEmail();
         await contactUsPage.countryExt.isDisplayed();
+        await contactUsPage.countryExt.waitForClickable();
         await contactUsPage.selectCountry();
         await contactUsPage.phoneNumberField.isDisplayed();
         await contactUsPage.typePhoneNumber();
@@ -65,6 +67,7 @@ describe.only("Testing Contact Us form", () => {
         await contactUsPage.businessEmailField.isDisplayed();
         await contactUsPage.typeBusinessEmail();
         await contactUsPage.countryExt.isDisplayed();
+        await contactUsPage.countryExt.waitForClickable();
         await contactUsPage.selectCountry();
         await contactUsPage.phoneNumberField.isDisplayed();
         await contactUsPage.typePhoneNumber();
@@ -87,6 +90,7 @@ describe.only("Testing Contact Us form", () => {
         await contactUsPage.businessEmailField.isDisplayed();
         await contactUsPage.typeBusinessEmail();
         await contactUsPage.countryExt.isDisplayed();
+        await contactUsPage.countryExt.waitForClickable();
         await contactUsPage.selectCountry();
         await contactUsPage.phoneNumberField.isDisplayed();
         await contactUsPage.typePhoneNumber();
@@ -111,6 +115,7 @@ describe.only("Testing Contact Us form", () => {
         await contactUsPage.businessEmailField.isDisplayed();
         await contactUsPage.typeBusinessEmail();
         await contactUsPage.countryExt.isDisplayed();
+        await contactUsPage.countryExt.waitForClickable();
         await contactUsPage.selectCountry();
         await contactUsPage.websiteField.isDisplayed();
         await contactUsPage.typeWebsite();

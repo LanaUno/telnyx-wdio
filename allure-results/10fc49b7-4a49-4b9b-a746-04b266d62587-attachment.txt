@@ -1,3 +1,0 @@
-{
-  "text": "Schiller and Sons"
-}

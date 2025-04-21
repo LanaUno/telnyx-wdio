@@ -1,3 +1,13 @@
+const envQa = 'https://www.telnyx.com/'
+const envDev= 'https://www.dev.telnyx.com/'
+let baseURL;
+if(process.env.ENV == 'QA') {baseURL = envQa}
+else if(process.env.ENV == 'DEV') {baseURL = envDev}
+else {
+    console.log("Please pass correct environment variable")
+    process.exit()
+}
+
 exports.config = {
     //
     // ====================
@@ -49,18 +59,9 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [
-        {
+    capabilities: [{
         browserName: 'chrome'
-    }, 
-    // {
-    //     browserName: 'firefox'
-    // }, 
-    // {
-    //     browserName: 'MicrosoftEdge'
-    // }
-],
-
+    }],
     //
     // ===================
     // Test Configurations
@@ -92,7 +93,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.telnyx.com/',
+    baseUrl: baseURL,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,

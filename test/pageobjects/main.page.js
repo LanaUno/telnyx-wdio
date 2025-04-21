@@ -9,7 +9,7 @@ const website = faker.internet.domainName();
 
 class MainPage extends FormPage {
     get signUpLink() {
-        return $('div[class="c-dyVVFl"]>a[href="/sign-up"]');
+        return $('//div//a[5]/span');
     }
     get bellCompanyName() {
         return $("#business_name");
@@ -48,7 +48,7 @@ class MainPage extends FormPage {
     }
 
     navigate() {
-        return browser.url("https://www.telnyx.com/");
+        return browser.url("/");
     }
     async clickSignUpLink() {
         await this.signUpLink.click();

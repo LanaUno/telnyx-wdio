@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": ".c-PJLV.c-fKwEGa.c-PJLV-cvZNBt-dark-false.c-frvnKx"
-}

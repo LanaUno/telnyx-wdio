@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "#ValidMsgPhone_Number_Base__c"
-}
