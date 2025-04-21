@@ -10,7 +10,7 @@ jobs:
         - name: 🐢 Setup Node
           uses: actions/setup-node@v4
           with:
-            node-version-file: v22.13.1
+            node-version-file: 22
 
         - name: 🏗️ Install Dependencies
           run: npm install
@@ -20,7 +20,6 @@ jobs:
 
         - name: 📦 Upload Logs
           uses: actions/upload-artifact@v4
-          if: failure()
           with:
-            name: logs
-            path: logs
+            name: allureReport
+            path: ./allure-report
