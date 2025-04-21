@@ -1,3 +1,10 @@
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+
+const tempUserDataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'wdio-chrome-profile-'));
+
+
 exports.config = {
     //
     // ====================
@@ -49,21 +56,35 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [
-        {
+    capabilities: [{
+        maxInstances: 1,
         browserName: 'chrome',
-        'goog: chromeOptions' : {
-            args: ['--headless', '--disable-gpu']
+        'goog:chromeOptions': {
+          args: [
+            '--headless',
+            '--disable-gpu',
+            `--user-data-dir=${tempUserDataDir}`
+          ]
         }
+      }],
+      // ...
+    };
+    
+//     capabilities: [
+//         {
+//         browserName: 'chrome',
+//         'goog: chromeOptions' : {
+//             args: ['--headless', '--disable-gpu']
+//         }
         
-    }, 
-    // {
-    //     browserName: 'firefox'
-    // }, 
-    // {
-    //     browserName: 'MicrosoftEdge'
-    // }
-],
+//     }, 
+//     // {
+//     //     browserName: 'firefox'
+//     // }, 
+//     // {
+//     //     browserName: 'MicrosoftEdge'
+//     // }
+// ],
 
     //
     // ===================
