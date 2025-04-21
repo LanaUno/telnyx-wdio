@@ -54,7 +54,7 @@ exports.config = {
         browserName: 'chrome',
         browserVersion: '131.0.6778.108',
         'goog: chromeOptions' : {
-            args: ['--headless', '--disable-gpu']
+            args: ['--headless', '--disable-gpu', '--remote-debugging-pipe']
         }
         
     }, 
