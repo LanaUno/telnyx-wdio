@@ -68,7 +68,7 @@ exports.config = {
         }
       }],
       // ...
-    };
+    // };
     
 //     capabilities: [
 //         {
