@@ -52,7 +52,7 @@ exports.config = {
     capabilities: [
         {
         browserName: 'chrome',
-        browserVersion: '130.0.6723.116',
+        browserVersion: '133.0.6943.141',
         'goog: chromeOptions' : {
             args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage']
         }
