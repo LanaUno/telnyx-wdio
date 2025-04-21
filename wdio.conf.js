@@ -52,9 +52,8 @@ exports.config = {
     capabilities: [
         {
         browserName: 'chrome',
-        browserVersion: '135.0.7049.96',
         'goog: chromeOptions' : {
-            args: ['--headless', '--disable-gpu', '--remote-debugging-pipe', '--no-sandbox']
+            args: ['--headless', '--disable-gpu']
         }
         
     }, 
