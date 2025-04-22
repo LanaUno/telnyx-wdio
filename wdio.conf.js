@@ -1,10 +1,3 @@
-const fs = require('fs');
-const os = require('os');
-const path = require('path');
-
-const tempUserDataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'wdio-chrome-profile-'));
-
-
 exports.config = {
     //
     // ====================
@@ -56,35 +49,24 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        maxInstances: 1,
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-          args: [
-            '--headless',
-            '--disable-gpu',
-            `--user-data-dir=${tempUserDataDir}`
-          ]
-        }
-      }],
       // ...
     // };
     
-//     capabilities: [
-//         {
-//         browserName: 'chrome',
-//         'goog: chromeOptions' : {
-//             args: ['--headless', '--disable-gpu']
-//         }
+    capabilities: [
+        {
+        browserName: 'chrome',
+        'goog: chromeOptions': {
+            args: ['headless', 'disable-gpu']
+        }
         
-//     }, 
+    }, 
 //     // {
 //     //     browserName: 'firefox'
 //     // }, 
 //     // {
 //     //     browserName: 'MicrosoftEdge'
 //     // }
-// ],
+],
 
     //
     // ===================
@@ -93,7 +75,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
