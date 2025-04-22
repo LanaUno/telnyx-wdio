@@ -65,7 +65,7 @@ exports.config = {
           '--allow-insecure-localhost',
           '--ignore-certificate-errors',
           '--window-size=1440,735',
-        `--user-data-dir=/tmp/chrome-profile-${Math.floor(Math.random() * 100000)}`]
+        '--remote-debugging-port=9222']
         },
         // excludeSwitches: ['--enable-logging'],
         
