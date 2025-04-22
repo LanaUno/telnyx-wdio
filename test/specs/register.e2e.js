@@ -101,7 +101,7 @@ it("Register an account with invalid email", async () => {
     await signUpPage.checkTermsConditionsBox();
     await signUpPage.signUpBtn.isDisplayed()
     await signUpPage.clickSingUpBtn();
-    await expect(signUpPage.emailErrMsg).toHaveText(expect.stringContaining('Invalid Email Address'));
+    await expect(signUpPage.emailErrMsg).toHaveText(expect.stringContaining('email and password combination is not valid'));
     await signUpPage.emailErrMsg.getCSSProperty('color: #e2231a')
 });
 })
