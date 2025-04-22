@@ -43,7 +43,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 1,
+    maxInstances: 3,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -64,7 +64,8 @@ exports.config = {
           '--disable-dev-shm-usage',
           '--allow-insecure-localhost',
           '--ignore-certificate-errors',
-          '--window-size=1440,735']
+          '--window-size=1440,735',
+        `--user-data-dir=/tmp/chrome-profile-${Math.floor(Math.random() * 100000)}`]
         },
         // excludeSwitches: ['--enable-logging'],
         
