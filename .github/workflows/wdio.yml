@@ -15,6 +15,9 @@ jobs:
         - name: Install Dependencies
           run: npm install
 
+        - name: Clean Chrome user data
+          run: rm -rf /tmp/chrome-profile*
+
         - name: Test
           run: npm run wdio
 
