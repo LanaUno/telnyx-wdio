@@ -59,7 +59,7 @@ exports.config = {
         'goog: chromeOptions': {
             args: ['--no-sandbox',
       '--disable-dev-shm-usage',
-      `--user-data-dir=/tmp/chrome-profile-${Date.now()}`]
+      ]
         },
         // excludeSwitches: ['--enable-logging'],
         
