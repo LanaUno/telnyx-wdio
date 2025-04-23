@@ -57,15 +57,9 @@ exports.config = {
         // maxInstances: 3,
         browserName: 'chrome',
         'goog: chromeOptions': {
-            args: ['--headless',
-          '--start-maximized',
-          '--no-sandbox',
-          '--disable-gpu',
-          '--disable-dev-shm-usage',
-          '--allow-insecure-localhost',
-          '--ignore-certificate-errors',
-          '--window-size=1440,735',
-        '--remote-debugging-port=9222']
+            args: ['--no-sandbox',
+      '--disable-dev-shm-usage',
+      `--user-data-dir=/tmp/chrome-profile-${Date.now()}`]
         },
         // excludeSwitches: ['--enable-logging'],
         

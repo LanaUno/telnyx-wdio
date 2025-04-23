@@ -10,13 +10,10 @@ jobs:
         - name: Setup Node
           uses: actions/setup-node@v3
           with:
-            node-version: "22.x"
+            node-version: "20.x"
 
         - name: Install Dependencies
           run: npm install
-
-        - name: Clean temp
-          run: rm -rf /tmp/*
 
         - name: Test
           run: npm run wdio
