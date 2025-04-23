@@ -4,7 +4,7 @@ exports.config = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    runner: 'local',
+    runner: "local",
     //
     // ==================
     // Specify Test Files
@@ -20,9 +20,7 @@ exports.config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        './test/specs/**/*.js'
-    ],
+    specs: ["./test/specs/**/*.js"],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -43,34 +41,35 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 3,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-      // ...
+    // ...
     // };
-    
+
     capabilities: [
         {
-        // maxInstances: 3,
-        browserName: 'chrome',
-        'goog: chromeOptions': {
-            args: ['--no-sandbox',
-      '--disable-dev-shm-usage',
-      ]
+            // maxInstances: 3,
+            browserName: "chrome",
+            "goog: chromeOptions": {
+                args: [
+                    "--headless=new",
+                    "--no-sandbox",
+                    "--disable-dev-shm-usage",
+                ],
+            },
+            // excludeSwitches: ['--enable-logging'],
         },
-        // excludeSwitches: ['--enable-logging'],
-        
-    }, 
-//     // {
-//     //     browserName: 'firefox'
-//     // }, 
-//     // {
-//     //     browserName: 'MicrosoftEdge'
-//     // }
-],
+        //     // {
+        //     //     browserName: 'firefox'
+        //     // },
+        //     // {
+        //     //     browserName: 'MicrosoftEdge'
+        //     // }
+    ],
 
     //
     // ===================
@@ -79,7 +78,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'silent',
+    logLevel: "silent",
     //
     // Set specific log levels per logger
     // loggers:
@@ -103,7 +102,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.telnyx.com/',
+    baseUrl: "https://www.telnyx.com/",
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -127,8 +126,8 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
-    
+    framework: "mocha",
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -142,15 +141,16 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',
+    reporters: [
+        "spec",
         // ['allure', {outputDir: 'allure-results'}]
     ],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000
+        ui: "bdd",
+        timeout: 60000,
     },
 
     //
@@ -247,12 +247,15 @@ exports.config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+    afterTest: async function (
+        test,
+        context,
+        { error, result, duration, passed, retries }
+    ) {
         if (!passed) {
             await browser.takeScreenshot();
         }
     },
-
 
     /**
      * Hook that gets executed after the suite has ended
@@ -297,22 +300,22 @@ exports.config = {
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
     /**
-    * Gets executed when a refresh happens.
-    * @param {string} oldSessionId session ID of the old session
-    * @param {string} newSessionId session ID of the new session
-    */
+     * Gets executed when a refresh happens.
+     * @param {string} oldSessionId session ID of the old session
+     * @param {string} newSessionId session ID of the new session
+     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
     /**
-    * Hook that gets executed before a WebdriverIO assertion happens.
-    * @param {object} params information about the assertion to be executed
-    */
+     * Hook that gets executed before a WebdriverIO assertion happens.
+     * @param {object} params information about the assertion to be executed
+     */
     // beforeAssertion: function(params) {
     // }
     /**
-    * Hook that gets executed after a WebdriverIO assertion happened.
-    * @param {object} params information about the assertion that was executed, including its results
-    */
+     * Hook that gets executed after a WebdriverIO assertion happened.
+     * @param {object} params information about the assertion that was executed, including its results
+     */
     // afterAssertion: function(params) {
     // }
-}
+};
