@@ -19,14 +19,42 @@ jobs:
 
       - name: 🧪 Run WDIO Tests
         run: npm run ff
+
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
  
       - name: 📦 Upload Allure Report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
-          gh_pages: ./allure-report
-          allure_results: ./allure-results
+          allure_results: allure-results
+          gh_pages: gh-pages
           allure_history: allure_history
+
+      - name: Deploy report to GitHub Pages   
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        ENV:
+          PERSONAL_TOKEN: ${{ secrets.PAT_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
+
+
+
+
+
+      # - name: 📦 Upload Allure Report
+      #   uses: simple-elf/allure-report-action@v1.7
+      #   if: always()
+      #   with:
+      #     gh_pages: ./allure-report
+      #     allure_results: ./allure-results
+      #     allure_history: allure_history
 
 
 

@@ -10,6 +10,7 @@ describe.only("Testing Contact Us form", () => {
         await expect(browser).toHaveUrl(expect.stringContaining("/contact-us"));
     });
     it("User can leave a request to an expert via 'Contact Us' link", async () => {
+        await contactUsPage.supportOption.waitForClickable();
         await contactUsPage.selectSupportOption();
         await contactUsPage.firstNameField.isDisplayed();
         await contactUsPage.typeFirstName();
