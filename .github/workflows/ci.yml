@@ -16,15 +16,13 @@ jobs:
  
       - name: 🧩 Install dependencies
         run: npm install
- 
-      # - name: 🧭 Install Google Chrome
-      #   uses: browser-actions/setup-chrome@v1
 
       - name: 🧪 Run WDIO Tests
         run: npm run ff
  
       - name: 📦 Upload Allure Report
         if: always()
+        run: report
         uses: actions/upload-artifact@v4
         with:
           name: allureReport
