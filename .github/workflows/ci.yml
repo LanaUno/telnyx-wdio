@@ -21,9 +21,19 @@ jobs:
         run: npm run ff
  
       - name: 📦 Upload Allure Report
+        uses: simple-elf/allure-report-action@v1.7
         if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: allureReport
-          path: ./allure-report
+          gh-pages: ./allure-report
+          allure_results: ./allure-results
+          allure_history: allure_history
+
+
+
+
+
+        # uses: actions/upload-artifact@v4
+        # with:
+        #   name: allureReport
+        #   path: ./allure-report
  
