@@ -29,7 +29,7 @@ jobs:
           path: reports
  
       - name: 📦 Upload Allure Report
-        uses: simple-elf/allure-report-action@master
+        uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
           gh_pages: reports
