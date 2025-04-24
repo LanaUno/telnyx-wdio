@@ -6,6 +6,7 @@ describe("Testing Global coverage form", () => {
     beforeEach(async () => {
         await mainPage.navigate();
         await mainPage.globalCoverageBtn.scrollIntoView();
+        await mainPage.globalCoverageBtn.waitForClickable();
         await mainPage.clickGlobalCoverageBtn();
         await expect(browser).toHaveUrl(
             expect.stringContaining("/global-coverage")
