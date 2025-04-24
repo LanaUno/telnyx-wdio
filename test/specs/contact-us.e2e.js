@@ -33,6 +33,7 @@ describe.only("Testing Contact Us form", () => {
         await contactUsPage.submitButton.isDisplayed();
         await contactUsPage.clickSubmitButton();
         await expect(browser).toHaveUrl(expect.stringContaining("/thank-you"));
+        await thanksPage.thanksMessage.isDisplayed()
         await expect(thanksPage.thanksMessage).toHaveText(
             expect.stringContaining("Thank you.")
         );
