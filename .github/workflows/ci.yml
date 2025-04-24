@@ -43,10 +43,3 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.PAT_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-
-
-        # uses: actions/upload-artifact@v4
-        # with:
-        #   name: allureReport
-        #   path: ./allure-report
- 

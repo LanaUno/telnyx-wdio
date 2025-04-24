@@ -41,7 +41,6 @@ export default class FormPage {
     get emailField() {
         return $("#email");
     }
-
     async typeFirstName() {
         await this.firstNameField.setValue(firstName);
     }

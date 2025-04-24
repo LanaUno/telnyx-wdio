@@ -9,7 +9,6 @@ class ContactUsPage extends FormPage {
     get supportOption() {
         return $("select[id='Reason_for_Contact__c']");
     }
-
     get websiteField() {
         return $("#Website");
     }
@@ -25,11 +24,9 @@ class ContactUsPage extends FormPage {
     get phoneErrMsg() {
         return $("#ValidMsgPhone_Number_Base__c");
     }
-
     async selectSupportOption() {
         await this.supportOption.selectByVisibleText("Support");
     }
-
     async typeWebsite() {
         await this.websiteField.setValue(website);
     }
