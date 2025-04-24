@@ -39,7 +39,7 @@ jobs:
       - name: Deploy report to GitHub Pages   
         if: always()
         uses: peaceiris/actions-gh-pages@v3
-        ENV:
+        with:
           PERSONAL_TOKEN: ${{ secrets.PAT_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
