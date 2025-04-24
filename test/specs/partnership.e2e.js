@@ -23,6 +23,7 @@ describe("Testing Become a parnter form", () => {
         await partnerPage.businessEmailField.isDisplayed();
         await partnerPage.typeBusinessEmail();
         await partnerPage.countryExt.isDisplayed();
+        await partnerPage.countryExt.waitForClickable();
         await partnerPage.selectCountry();
         await partnerPage.phoneNumberField.isDisplayed();
         await partnerPage.typeLongPhoneNumber();
@@ -45,6 +46,7 @@ describe("Testing Become a parnter form", () => {
         await partnerPage.businessEmailField.isDisplayed();
         await partnerPage.typeBusinessEmail();
         await partnerPage.countryExt.isDisplayed();
+        await partnerPage.countryExt.waitForClickable();
         await partnerPage.selectCountry();
         await partnerPage.phoneNumberField.isDisplayed();
         await partnerPage.typePhoneNumber();
@@ -67,6 +69,7 @@ describe("Testing Become a parnter form", () => {
         await partnerPage.businessEmailField.isDisplayed();
         await partnerPage.typeWrongEmailFormat();
         await partnerPage.countryExt.isDisplayed();
+        await partnerPage.countryExt.waitForClickable();
         await partnerPage.selectCountry();
         await partnerPage.phoneNumberField.isDisplayed();
         await partnerPage.typePhoneNumber();
