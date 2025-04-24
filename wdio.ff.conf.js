@@ -5,9 +5,12 @@ exports.config = {
     ],
     exclude: [
     ],
-    maxInstances: 1,
+    maxInstances: 5,
     capabilities: [{
-        browserName: 'firefox'
+        browserName: 'firefox',
+        'moz:firefoxOptions': {
+          args: ['-headless']
+        },
     }],
     logLevel: 'info',
     bail: 0,
