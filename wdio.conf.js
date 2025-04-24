@@ -143,7 +143,7 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: [
         "spec",
-        // ['allure', {outputDir: 'allure-results'}]
+        ['allure', {outputDir: 'allure-results'}]
     ],
 
     // Options to be passed to Mocha.
