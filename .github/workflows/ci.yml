@@ -26,13 +26,13 @@ jobs:
         continue-on-error: true
         with:
           ref: gh-pages
-          path: reports
+          path: ./allure-report
  
       - name: 📦 Upload Allure Report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
-          gh_pages: reports
+          gh_pages: ./allure-report
           allure_results: allure-results
           allure_history: allure_history
 
@@ -43,21 +43,6 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.PAT_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-
-
-
-
-
-      # - name: 📦 Upload Allure Report
-      #   uses: simple-elf/allure-report-action@v1.7
-      #   if: always()
-      #   with:
-      #     gh_pages: ./allure-report
-      #     allure_results: ./allure-results
-      #     allure_history: allure_history
-
-
-
 
 
         # uses: actions/upload-artifact@v4
