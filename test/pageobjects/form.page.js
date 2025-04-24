@@ -24,7 +24,7 @@ export default class FormPage {
         return $("#Company");
     }
     get countryExt() {
-        return $("#Phone_Number_Extension__c");
+        return $("//select/option[235]");
     }
     get phoneNumberField() {
         return $("#Phone_Number_Base__c");
@@ -64,7 +64,8 @@ export default class FormPage {
         await this.mobilPhone.setValue(companyPhone);
     }
     async selectCountry() {
-        await this.countryExt.selectByVisibleText("Ukraine (+380)");
+        // await this.countryExt.selectByVisibleText("Ukraine (+380)");
+        await this.countryExt.click();
     }
     async typePhoneNumber() {
         await this.phoneNumberField.setValue(phone);
