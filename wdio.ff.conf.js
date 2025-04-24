@@ -12,7 +12,7 @@ exports.config = {
           args: ['-headless']
         },
     }],
-    logLevel: 'info',
+    logLevel: 'silent',
     bail: 0,
     baseUrl: 'https://www.telnyx.com/',
     waitforTimeout: 10000,

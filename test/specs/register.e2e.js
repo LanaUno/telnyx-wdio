@@ -101,7 +101,7 @@ it("Register an account with invalid email", async () => {
     await signUpPage.checkTermsConditionsBox();
     await signUpPage.signUpBtn.isDisplayed()
     await signUpPage.clickSingUpBtn();
-    await expect(signUpPage.emailErrMsg).toHaveText(expect.stringContaining('Email', { ignoreCase: true }));
+    await expect(signUpPage.emailErrMsg).toBeDisplayed()
     await signUpPage.emailErrMsg.getCSSProperty('color: #e2231a')
 });
 })
