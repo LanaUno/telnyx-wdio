@@ -26,14 +26,14 @@ jobs:
         continue-on-error: true
         with:
           ref: gh-pages
-          path: gh-pages
+          path: reports
  
       - name: 📦 Upload Allure Report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
+          gh_pages: reports
           allure_results: allure-results
-          gh_pages: gh-pages
           allure_history: allure_history
 
       - name: Deploy report to GitHub Pages   
